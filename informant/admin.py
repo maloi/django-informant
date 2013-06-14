@@ -26,8 +26,8 @@ class NewsletterAdmin(admin.ModelAdmin):
 
 
 class RecipientAdmin(admin.ModelAdmin):
-    fields = ('email', 'firstname', 'lastname', 'sent', 'deleted',)
-    list_display = ('email', 'firstname', 'lastname', 'sent', 'deleted', 'date', 'md5',)
+    fields = ('email', 'first_name', 'last_name', 'sent', 'deleted',)
+    list_display = ('email', 'first_name', 'last_name', 'sent', 'deleted', 'date', 'md5',)
     search_fields = ('email',)
 
 admin.site.register(Newsletter, NewsletterAdmin)

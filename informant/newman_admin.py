@@ -19,8 +19,8 @@ class NewsletterAdmin(newman.NewmanModelAdmin):
         return super(NewsletterAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 class RecipientAdmin(newman.NewmanModelAdmin):
-    fields = ('email', 'firstname', 'lastname', 'sent', 'deleted',)
-    list_display = ('email', 'firstname', 'lastname', 'sent', 'deleted', 'date', 'md5',)
+    fields = ('email', 'first_name', 'last_name', 'sent', 'deleted',)
+    list_display = ('email', 'first_name', 'last_name', 'sent', 'deleted', 'date', 'md5',)
     search_fields = ('email',)
 
 newman.site.register(Newsletter, NewsletterAdmin)

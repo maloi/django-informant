@@ -23,8 +23,8 @@ def subscribe(request):
             if Recipient.objects.filter(email=f.cleaned_data['email']).count() == 0:
                 # If email doesn't exist, save email
                 r = Recipient(email=f.cleaned_data['email'],
-                              firstname=f.cleaned_data['firstname'],
-                              lastname=f.cleaned_data['lastname'],
+                              first_name=f.cleaned_data['first_name'],
+                              last_name=f.cleaned_data['last_name'],
                              )
                 r.save()
             else:
@@ -46,13 +46,13 @@ def subscribe(request):
         else:
             url = request.POST.get('back_url', '/')
             email = request.POST.get('email', '@')
-            firstname = request.POST.get('firstname', '')
-            lastname = request.POST.get('lastname', '')
+            first_name = request.POST.get('first_name', '')
+            last_name = request.POST.get('last_name', '')
             return render(
                 request,
                 'informant/management/subscribe_error.html',
                 {'back_url': url, 'subscribe_email': email,
-                 'firstname': firstname, 'lastname': lastname,
+                 'first_name': first_name, 'last_name': last_name,
                 },
                 status=400)
     raise Http404
