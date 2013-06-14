@@ -33,8 +33,8 @@ def subscribe(request):
                 if request.POST.get('subscribe', None) == 'unsubscribe':
                     return unsubscribe(request, r.md5)
 
-                r.first_name=f.cleaned_data['first_name']
-                r.last_name=f.cleaned_data['last_name']
+                r.first_name = f.cleaned_data['first_name']
+                r.last_name = f.cleaned_data['last_name']
                 r.sent = False
                 r.deleted = False
                 r.date = None
