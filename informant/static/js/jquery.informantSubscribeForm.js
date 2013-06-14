@@ -1,4 +1,4 @@
-define(['jquery'], function ($) {
+(function ($) {
     $.fn.informantSubscribeForm = function (options) {
         var settings = $.extend({
             renderResults: false,
@@ -39,4 +39,4 @@ define(['jquery'], function ($) {
         });
     };
     return $.fn.informantSubscribeForm;
-})
+}}( jQuery ));
