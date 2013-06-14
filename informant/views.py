@@ -19,8 +19,6 @@ def subscribe(request):
             if f.cleaned_data['surname'] != '':
                 return HttpResponseForbidden()
 
-            import pprint; pprint.pprint(f.cleaned_data)
-
             # Save email
             if Recipient.objects.filter(email=f.cleaned_data['email']).count() == 0:
                 # If email doesn't exist, save email
