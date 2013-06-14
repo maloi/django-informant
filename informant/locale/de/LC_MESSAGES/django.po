@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-14 15:14+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:20
+msgid "Send again"
+msgstr "Nochmal senden"
+
+#: admin.py:25
+msgid "Send to testing emails"
+msgstr "An Testadressen senden"
+
+#: models.py:54
+msgid "Subject"
+msgstr "Betreff"
+
+#: models.py:55
+msgid "Content"
+msgstr "Inhalt"
+
+#: models.py:56
+msgid "Date"
+msgstr "Datum"
+
+#: models.py:57 models.py:158
+msgid "Sent"
+msgstr "Gesendet"
+
+#: models.py:58
+msgid "Testing emails"
+msgstr "Testemails"
+
+#: models.py:59
+msgid "Approved"
+msgstr "Abgesegnet"
+
+#: models.py:64
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: models.py:65
+msgid "Newsletters"
+msgstr "Newsletter"
+
+#: models.py:84
+msgid "Preview"
+msgstr "Vorschau"
+
+#: models.py:154
+msgid "Email"
+msgstr "Email"
+
+#: models.py:155
+msgid "Lastname"
+msgstr "Nachname"
+
+#: models.py:156
+msgid "Firstname"
+msgstr "Vorname"
+
+#: models.py:157
+msgid "Created"
+msgstr "Erstellt"
+
+#: models.py:159
+msgid "Deleted"
+msgstr "Gelöscht"
+
+#: models.py:160
+msgid "MD5"
+msgstr "MD5"
+
+#: models.py:163
+msgid "Recipient"
+msgstr "Empfänger"
+
+#: models.py:164
+msgid "Recipients"
+msgstr "Empfänger"
+
+#: urls.py:6
+msgid "subscribe"
+msgstr "abonnieren"
+
+#: urls.py:9
+msgid "unsubscribe"
+msgstr "abbestellen"
+
+#: urls.py:12
+msgid "preview"
+msgstr "Vorschau"
+
+#: templates/informant/mail/base.html:3
+msgid "lang"
+msgstr "Sprache"
+
+#: templates/informant/mail/base.txt:1
+msgid "If you cannot see this e-mail correctly, please continue here:"
+msgstr "Sollte diese E-Mail nicht korrekt dargestellt werden, fahren Sie bitte hier fort:"
+
+#: templates/informant/mail/base.txt:4
+msgid ""
+"You are subscribed to our newsletter, if you do not wish to receive these "
+"information anymore, click on the unsubscribe link below:"
+msgstr ""
+"Sie haben unseren Newsletter abonniert, wenn Sie diesen nicht mehr "
+"empfangen wollen, bestellen Sie ihn einfach ab unter:"
+
+#: templates/informant/management/subscribe_error.html:2
+msgid ""
+"Subscription to newsletter failed! Please check if the address is correct "
+"and try again."
+msgstr ""
+"Das Abonnieren des Newsletters schlug fehl!, Bitte kontrollieren Sie ob"
+"die E-Mail Adresse korrekt ist und versuchen Sie es erneut."
+
+#: templates/informant/management/subscribe_ok.html:2
+#, python-format
+msgid ""
+"Thanks for subscription to our newsletter for your e-mail address <strong>"
+"%(email)s</strong>."
+msgstr ""
+"Vielen Dank für das Abonnieren unseres Newsletters mit ihr E-Mail Adresse <strong>"
+"%(email)s</strong>."
+
+#: templates/informant/management/unsubscribed.html:2
+#, python-format
+msgid ""
+"Your e-mail address <strong>%(email)s</strong> have been removed from our "
+"newsletter contact database."
+msgstr ""
+"Ihre E-Mail Adresse <strong>%(email)s</strong> wurde aus unserer Newsletter "
+"Datenbank entfernt."
