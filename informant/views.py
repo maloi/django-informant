@@ -19,6 +19,8 @@ def subscribe(request):
             if f.cleaned_data['surname'] != '':
                 return HttpResponseForbidden()
 
+            import pprint; pprint.pprint(f.cleaned_data)
+
             # Save email
             if Recipient.objects.filter(email=f.cleaned_data['email']).count() == 0:
                 # If email doesn't exist, save email
@@ -30,6 +32,8 @@ def subscribe(request):
             else:
                 # If email exists, clear deleted flag and set new created date
                 r = Recipient.objects.get(email=f.cleaned_data['email'])
+                if request.POST.get('subscribe', None) == 'unsubscribe':
+                    return unsubscribe(request, r.md5)
                 r.sent = False
                 r.deleted = False
                 r.date = None
