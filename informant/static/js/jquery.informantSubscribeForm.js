@@ -39,4 +39,4 @@
         });
     };
     return $.fn.informantSubscribeForm;
-}}( jQuery ));
+}( jQuery ));
