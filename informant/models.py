@@ -152,6 +152,8 @@ class Newsletter(models.Model):
 
 class Recipient(models.Model):
     email = models.EmailField(_('Email'))
+    last_name = models.CharField(_('Lastname'), max_length=50)
+    first_name = models.CharField(_('Firstname'), max_length=50)
     date = models.DateTimeField(_('Created'))
     sent = models.BooleanField(_('Sent'), default=False)
     deleted = models.BooleanField(_('Deleted'), default=False)

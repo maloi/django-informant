@@ -22,7 +22,10 @@ def subscribe(request):
             # Save email
             if Recipient.objects.filter(email=f.cleaned_data['email']).count() == 0:
                 # If email doesn't exist, save email
-                r = Recipient(email=f.cleaned_data['email'])
+                r = Recipient(email=f.cleaned_data['email'],
+                              firstname=f.cleaned_data['firstname'],
+                              lastname=f.cleaned_data['lastname'],
+                             )
                 r.save()
             else:
                 # If email exists, clear deleted flag and set new created date
@@ -43,10 +46,14 @@ def subscribe(request):
         else:
             url = request.POST.get('back_url', '/')
             email = request.POST.get('email', '@')
+            firstname = request.POST.get('firstname', '')
+            lastname = request.POST.get('lastname', '')
             return render(
                 request,
                 'informant/management/subscribe_error.html',
-                {'back_url': url, 'subscribe_email': email},
+                {'back_url': url, 'subscribe_email': email,
+                 'firstname': firstname, 'lastname': lastname,
+                },
                 status=400)
     raise Http404
 
