@@ -32,6 +32,9 @@ def subscribe(request):
                 r = Recipient.objects.get(email=f.cleaned_data['email'])
                 if request.POST.get('subscribe', None) == 'unsubscribe':
                     return unsubscribe(request, r.md5)
+
+                r.first_name=f.cleaned_data['first_name']
+                r.last_name=f.cleaned_data['last_name']
                 r.sent = False
                 r.deleted = False
                 r.date = None
