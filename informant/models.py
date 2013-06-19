@@ -103,7 +103,7 @@ class Newsletter(models.Model):
         content_html_, content_txt_ = self._prep_content()
 
         # Recipients, who have not got newsletter
-        recipients = Recipient.objects.filter(sent=False, deleted=False)
+        recipients = Recipient.objects.filter(sent=False, deleted=False, activated=True)
 
         for recipient in recipients:
             # Replace fake md5
