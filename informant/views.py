@@ -6,6 +6,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, \
 from django.shortcuts import render, get_object_or_404
 from django.template import Template, Context
 from django.template.loader import render_to_string
+from django.core.urlresolvers import reverse
 
 
 from informant.models import Recipient, Newsletter
@@ -29,10 +30,11 @@ def subscribe(request):
                               last_name=f.cleaned_data['last_name'],
                              )
                 r.save()
+                link = request.build_absolute_uri(reverse('informant_activate', args=(r.md5, )))
                 message = render_to_string('informant/mail/activation_email.html',
                         {'email': r.email,
                         'first_name': r.first_name,
-                        'md5': r.md5,
+                        'link': link,
                         }
                 )
                 subject = getattr(settings, 'NEWSLETTER_ACTIVATION_SUBJECT', '')
