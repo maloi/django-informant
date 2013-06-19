@@ -157,6 +157,7 @@ class Recipient(models.Model):
     date = models.DateTimeField(_('Created'))
     sent = models.BooleanField(_('Sent'), default=False)
     deleted = models.BooleanField(_('Deleted'), default=False)
+    activated = models.BooleanField(_('Activated'), default=False)
     md5 = models.CharField(_('MD5'), max_length=32)
 
     class Meta:

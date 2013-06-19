@@ -4,6 +4,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, \
     HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404
 from django.template import Template, Context
+from django.template.loader import render_to_string
 
 
 from informant.models import Recipient, Newsletter
@@ -27,6 +28,19 @@ def subscribe(request):
                               last_name=f.cleaned_data['last_name'],
                              )
                 r.save()
+                message = render_to_string('informant/mail/activation_email.html',
+                        {'email': r.email,
+                        'first_name': r.first_name,
+                        'md5': r.md5,
+                        }
+                )
+                subject = = getattr(settings, 'NEWSLETTER_ACTIVATION_SUBJECT', '')
+                send_mail(
+                    subject,
+                    message,
+                    settings.NEWSLETTER_EMAIL,  # Email From
+                    [f.cleaned_data['email']],
+                )
             else:
                 # If email exists, clear deleted flag and set new created date
                 r = Recipient.objects.get(email=f.cleaned_data['email'])
@@ -61,6 +75,21 @@ def subscribe(request):
                 },
                 status=400)
     raise Http404
+
+
+def activate(request, recipient_hash):
+    try:
+        r = Recipient.objects.get(md5=recipient_hash, activated=False)
+    except:
+        # Recipient does not exist
+        return HttpResponseForbidden()
+
+    r.activated = True
+    r.save()
+
+    return render(request,
+                  'informant/management/activated.html',
+                  {'recipient': r})
 
 
 def unsubscribe(request, recipient_hash):
