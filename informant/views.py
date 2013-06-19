@@ -34,7 +34,7 @@ def subscribe(request):
                         'md5': r.md5,
                         }
                 )
-                subject = = getattr(settings, 'NEWSLETTER_ACTIVATION_SUBJECT', '')
+                subject = getattr(settings, 'NEWSLETTER_ACTIVATION_SUBJECT', '')
                 send_mail(
                     subject,
                     message,
