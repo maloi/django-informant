@@ -136,7 +136,7 @@ msgid ""
 "Thanks for subscription to our newsletter for your e-mail address <strong>"
 "%(email)s</strong>."
 msgstr ""
-"Vielen Dank für das Abonnieren unseres Newsletters mit ihr E-Mail Adresse <strong>"
+"Vielen Dank für das Abonnieren unseres Newsletters mit Ihrer E-Mail Adresse <strong>"
 "%(email)s</strong>."
 
 #: templates/informant/management/unsubscribed.html:2
